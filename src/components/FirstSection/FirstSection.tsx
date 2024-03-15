@@ -25,7 +25,7 @@ const collections: CollectionPropsData[] = [
 ]
 export const FirstSection = () => {
   return (
-    <section className="flex min-h-[100vh] w-full flex-col p-12">
+    <section className="flex min-h-[100vh] w-full flex-col p-12 gap-8 *:rounded-lg">
       <Slider collections={collections} />
       <SpecialOffer/>
     </section>
