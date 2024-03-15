@@ -14,7 +14,7 @@ const Slider: FC<SliderType> = ({collections}) => {
     parentRef: ref,
   })
   return (
-    <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto" ref={ref}>
+    <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto" id='slider' ref={ref}>
       {collections.map((collection) => (
         <Collection
           key={collection.id}
