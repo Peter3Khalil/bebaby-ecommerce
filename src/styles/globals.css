@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: #97d5ee;
+    --primary-foreground: #fff;
+    --secondary: #de8d59;
+    --secondary-foreground: #fff;
+    --muted: #f9f9f9;
+    --muted-foreground: #2e3331;
+    --accent: #f0f5f7;
+    --accent-foreground: #2e3331;
+    --radius: 0.5rem;
+  }
+
+}
+
+
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100svh;
+}
+#__next{
+  height: 100%;
+}
+html{
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px){
+  html{
+    font-size: 18px;
+  }
+}
