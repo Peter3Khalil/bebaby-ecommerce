@@ -17,13 +17,13 @@ const Collection: FC<CollectionProps> = ({ imageUrl, title, description, classNa
         backgroundImage: `url(${imageUrl})`,
       }}
       className={cn(
-        'flex h-[450px] w-full flex-col items-start justify-end gap-6 bg-cover bg-center bg-no-repeat px-5 pb-10 text-white',
+        'flex h-[450px] w-full flex-col items-start justify-end gap-6 bg-cover bg-center bg-no-repeat px-4 pb-10 text-white',
         className
       )}
       {...props}
     >
       <h1 className="text-3xl font-bold">{title}</h1>
-      <p className="pr-2">{description}</p>
+      <p className="pr-6">{description}</p>
       <BuyNowButton />
       {sliderPoints}
     </div>
