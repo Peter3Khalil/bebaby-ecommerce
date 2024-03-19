@@ -9,7 +9,7 @@ type SpecialOfferProps = {
 const SpecialOffer: FC<SpecialOfferProps> = ({ className, props }) => {
   return (
     <div
-      className={cn('flex w-full flex-col items-center gap-2 bg-[#cadee5] pb-12 pt-6 lg:pt-12 text-[#2e3331]', className)}
+      className={cn('flex w-full flex-col items-center gap-2 bg-[#cadee5] md:px-16 pb-12 pt-6 lg:pt-12 text-[#2e3331]', className)}
       {...props}
     >
       <div className="text-center">
@@ -23,7 +23,7 @@ const SpecialOffer: FC<SpecialOfferProps> = ({ className, props }) => {
         alt="baby slippers"
         className="h-auto w-[162px]"
       />
-      <ul className="flex flex-col gap-6 text-center lg:flex-row lg:gap-12">
+      <ul className="flex flex-col gap-6 text-center md:justify-between w-full md:flex-row lg:gap-12">
         {['Days', 'Hours', 'Minutes', 'Seconds'].map((item, index) => (
           <li key={index}>
             <p className="text-3xl font-bold leading-none">00</p>
