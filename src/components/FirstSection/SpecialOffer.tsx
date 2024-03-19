@@ -1,12 +1,19 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { FC } from 'react'
 import BuyNowButton from '../shared/BuyNowButton'
-
-const SpecialOffer = () => {
+import { cn } from '@/lib/utils'
+type SpecialOfferProps = {
+  className?: string
+  props?: React.HTMLProps<HTMLDivElement>
+}
+const SpecialOffer: FC<SpecialOfferProps> = ({ className, props }) => {
   return (
-    <div className="flex w-full flex-col items-center gap-2 bg-[#cadee5] pt-6 pb-12 text-[#2e3331]">
+    <div
+      className={cn('flex w-full flex-col items-center gap-2 bg-[#cadee5] pb-12 pt-6 lg:pt-12 text-[#2e3331]', className)}
+      {...props}
+    >
       <div className="text-center">
-        <h2 className="mb-1 text-3xl font-bold leading-none">Special offer</h2>
+        <h2 className="mb-1 text-3xl font-bold leading-none lg:text-4xl">Special offer</h2>
         <p className="text-md">Baby slippers</p>
       </div>
       <Image
@@ -16,15 +23,15 @@ const SpecialOffer = () => {
         alt="baby slippers"
         className="h-auto w-[162px]"
       />
-      <ul className="flex flex-col gap-6 text-center">
+      <ul className="flex flex-col gap-6 text-center lg:flex-row lg:gap-12">
         {['Days', 'Hours', 'Minutes', 'Seconds'].map((item, index) => (
           <li key={index}>
             <p className="text-3xl font-bold leading-none">00</p>
-            <span className="text-xl font-semibold">{item}</span>
+            <span className="text-xl font-semibold lg:text-md text-black/70">{item.toLowerCase()}</span>
           </li>
         ))}
       </ul>
-      <BuyNowButton className='mt-6' />
+      <BuyNowButton className="mt-6" />
     </div>
   )
 }

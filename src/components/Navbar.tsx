@@ -53,8 +53,8 @@ export const Navbar = () => {
       <nav className="sticky z-10 top-0 flex h-[4rem] w-full items-center justify-between gap-12 border-b bg-white px-6 py-2 text-black shadow-md md:h-16">
         <div className="flex h-full items-center gap-8">
           <div className="flex h-full cursor-pointer items-center gap-5 rounded-lg bg-[#97d5ee] px-5 text-gray-600 hover:bg-[#5dbde3] md:pr-20">
-            <SlMenu className="text-3xl md:text-xl" />
-            <span className="text-md font-semibold md:text-sm">All Categories</span>
+            <SlMenu className="text-2xl md:text-xl shrink-0" />
+            <span className="text-md font-semibold md:text-sm shrink-0">All Categories</span>
           </div>
           <ul className="gap-8 hidden md:flex">
             {['Shop', 'Blog', 'About', 'Contact'].map((item, index) => (

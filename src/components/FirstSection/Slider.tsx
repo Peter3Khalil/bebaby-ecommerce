@@ -6,15 +6,17 @@ import { CollectionPropsData } from '@/types'
 
 type SliderType = {
   collections: CollectionPropsData[]
+  className?: string
+  props?: React.HTMLProps<HTMLDivElement>
 }
 //TODO: Implement loop when the last element is visible or the first element is visible
-const Slider: FC<SliderType> = ({collections}) => {
+const Slider: FC<SliderType> = ({collections,className,props}) => {
   const ref = React.useRef<HTMLDivElement | null>(null)
   const { visibleElement } = useInView({
     parentRef: ref,
   })
   return (
-    <div className="flex snap-x snap-mandatory gap-6 overflow-x-auto" id='slider' ref={ref}>
+    <div className={cn("flex snap-x snap-mandatory gap-6 overflow-x-auto h-full *:rounded-lg",className)} id='slider' {...props} ref={ref}>
       {collections.map((collection) => (
         <Collection
           key={collection.id}
@@ -25,7 +27,7 @@ const Slider: FC<SliderType> = ({collections}) => {
             id: collection.id,
           }}
           sliderPoints={
-            <ul className="flex gap-2">
+            <ul className="flex gap-2 ">
               {collections.map((item) => {
                 return (
                   <li
