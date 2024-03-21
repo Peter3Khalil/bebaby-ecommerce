@@ -2,10 +2,10 @@ import useInView from '@/hooks/useInView'
 import React, { FC } from 'react'
 import Collection from './Collection'
 import { cn } from '@/lib/utils'
-import { CollectionPropsData } from '@/types'
+import { type Collection as CollectionType } from '@/types/collection.type'
 
 type SliderType = {
-  collections: CollectionPropsData[]
+  collections: CollectionType[]
   className?: string
   props?: React.HTMLProps<HTMLDivElement>
 }

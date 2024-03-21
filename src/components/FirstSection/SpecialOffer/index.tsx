@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
-import BuyNowButton from '../shared/BuyNowButton'
 import { cn } from '@/lib/utils'
-type SpecialOfferProps = {
-  className?: string
-  props?: React.HTMLProps<HTMLDivElement>
-}
-const SpecialOffer: FC<SpecialOfferProps> = ({ className, props }) => {
+import { Button } from '../../ui/button'
+import { IoIosArrowForward } from '@/components/shared/Icons'
+
+export const SpecialOffer: FC<React.HTMLProps<HTMLDivElement>> = ({ className, ...props }) => {
   return (
     <div
-      className={cn('flex w-full flex-col items-center gap-2 bg-[#cadee5] md:px-16 pb-12 pt-6 lg:pt-12 text-[#2e3331]', className)}
+      className={cn(
+        'flex w-full flex-col items-center gap-6 bg-secondary p-12 text-secondary-foreground md:px-16 lg:pt-12',
+        className
+      )}
       {...props}
     >
       <div className="text-center">
@@ -23,17 +24,17 @@ const SpecialOffer: FC<SpecialOfferProps> = ({ className, props }) => {
         alt="baby slippers"
         className="h-auto w-[162px]"
       />
-      <ul className="flex flex-col gap-6 text-center md:justify-between w-full md:flex-row lg:gap-12">
+      <ul className="flex w-full flex-col gap-6 text-center md:flex-row md:justify-between lg:gap-12">
         {['Days', 'Hours', 'Minutes', 'Seconds'].map((item, index) => (
           <li key={index}>
             <p className="text-3xl font-bold leading-none">00</p>
-            <span className="text-xl font-semibold lg:text-md text-black/70">{item.toLowerCase()}</span>
+            <span className="text-xl font-semibold text-black/70 lg:text-md">{item.toLowerCase()}</span>
           </li>
         ))}
       </ul>
-      <BuyNowButton className="mt-6" />
+      <Button className="flex items-center gap-2" variant="default">
+        <span className='leading-none'>Buy Now</span> <IoIosArrowForward/>
+      </Button>
     </div>
   )
 }
-
-export default SpecialOffer

@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowRightLong } from '@/components/shared/Icons'
+import { Button } from '../ui/button'
 type CardProps = {
   title: string
   description: string
@@ -7,12 +8,23 @@ type CardProps = {
 }
 const Card: FC<CardProps> = ({ title, description, image }) => {
   return (
-    <div className="min-h-[250px] w-full rounded-lg bg-[#F0F5F7] px-6 py-8 hover:-translate-y-2 transition duration-200 ease-linear">
-      <div className="flex flex-col items-center gap-4 relative text-center">
-        <img loading='lazy' width={100} height={100} src={image} alt={title} className="w-[200px] h-auto object-cover mb-12" />
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm">{description}</p>
-        <button className='font-semibold flex items-center gap-2'>Buy now <FaArrowRightLong /></button>
+    <div className="w-full items-center rounded-lg bg-accent px-6 py-8 lg:py-4 text-accent-foreground transition duration-200 ease-linear hover:-translate-y-2">
+      <div className="relative flex flex-col items-center gap-4 text-center lg:flex-row">
+        <img
+          loading="lazy"
+          width={100}
+          height={100}
+          src={image}
+          alt={title}
+          className="lg:order-2 h-auto w-[200px] lg:w-[170px] object-cover"
+        />
+        <div className='flex flex-col items-center gap-3 lg:text-left lg:gap-1 lg:items-start h-full'>
+          <h3 className="text-xl lg:text-2xl font-bold">{title}</h3>
+          <p className="text-sm text-muted-foreground">{description}</p>
+          <Button className="flex items-center gap-2 px-0" variant={'link'}>
+            <span className="leading-none">Buy Now</span> <FaArrowRightLong />
+          </Button>
+        </div>
       </div>
     </div>
   )

@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images:{
-    domains: ['themes.muffingroup.com']
-  }
-};
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'themes.muffingroup.com'
+      },
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig

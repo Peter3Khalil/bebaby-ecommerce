@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import React, { FC } from 'react'
-import BuyNowButton from '../shared/BuyNowButton'
-
+import { Button } from '../ui/button'
+import { IoIosArrowForward } from '@/components/shared/Icons'
 type CollectionProps = {
   imageUrl: string
   title: string
@@ -22,10 +22,12 @@ const Collection: FC<CollectionProps> = ({ imageUrl, title, description, classNa
       )}
       {...props}
     >
-      <div className='flex flex-col w-[300px] items-start justify-end gap-6'>
+      <div className="flex w-[300px] flex-col items-start justify-end gap-6">
         <h2 className="line-clamp-2 w-full text-3xl font-bold lg:text-4xl">{title}</h2>
         <p className="w-full pr-6">{description}</p>
-        <BuyNowButton />
+        <Button className="flex items-center gap-2 border border-foreground" variant="secondary">
+          <span className="leading-none">Buy Now</span> <IoIosArrowForward />
+        </Button>
         {sliderPoints}
       </div>
     </div>
