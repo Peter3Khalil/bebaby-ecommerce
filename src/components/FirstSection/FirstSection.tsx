@@ -1,7 +1,7 @@
 import { type Collection } from '@/types/collection.type'
 import React from 'react'
 import Slider from './Slider'
-import {SpecialOffer} from './SpecialOffer'
+import { SpecialOffer } from './SpecialOffer'
 import Card from './Card'
 import { type Card as CardType } from '@/types/card.type'
 const collections: Collection[] = [
@@ -46,12 +46,12 @@ const cards: CardType[] = [
 ]
 export const FirstSection = () => {
   return (
-    <section className="flex min-h-[100vh] w-full flex-col gap-8 p-12 *:rounded-lg lg:px-6 lg:py-8">
+    <section className="flex min-h-[100vh] w-full flex-col gap-8 *:rounded-lg">
       <div className="flex w-full flex-col gap-8 *:rounded-lg lg:h-[75vh] lg:flex-row">
         <Slider collections={collections} className="lg:h-full lg:w-4/5" />
         <SpecialOffer className="lg:h-full lg:flex-1" />
       </div>
-      <ul className="flex flex-col gap-6 md:flex-row">
+      <ul className="flex flex-col gap-6 md:flex-row md:[&>*:nth-child(2)]:h-[80%] lg:[&>*:nth-child(2)]:h-auto">
         {cards.map((item, index) => (
           <Card key={index} title={item.title} description={item.description} image={item.imageUrl} />
         ))}

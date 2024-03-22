@@ -4,8 +4,6 @@ import {
   Footer,
   Impressions,
   LatestBlogPosts,
-  NavMobile,
-  Navbar,
   Promotion,
   TopRatedProducts,
 } from '@/components'
@@ -13,8 +11,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <main className="flex min-h-full w-full flex-col bg-white text-black">
-      <Navbar />
+    <main className="flex flex-col bg-background text-foreground px-6 gap-20">
       <FirstSection />
       <BestSeller />
       <Promotion />
@@ -22,7 +19,6 @@ const Home = () => {
       <Impressions />
       <LatestBlogPosts />
       <Footer />
-      <NavMobile />
     </main>
   )
 }
