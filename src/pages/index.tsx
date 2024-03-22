@@ -11,7 +11,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <main className="flex flex-col bg-background text-foreground px-6 gap-20">
+    <main className="flex flex-col bg-background text-foreground px-12 md:px-6 gap-20">
       <FirstSection />
       <BestSeller />
       <Promotion />
